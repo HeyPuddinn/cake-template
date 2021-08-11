@@ -1,0 +1,118 @@
+// elements button
+
+// Thấy buttons có bị trùng nhiều không //để tui xem thử có rút gọn dc ko
+
+// Background và cusor để mặc định khi hover transparent và pointer
+// Màu background = màu border khi hover và color khi hover nữa , đặt 1 biến thôi rồi dùng chung //ok
+// 
+
+$buttons:
+    "default" #415094 #fff none pointer #415094 #fff #f9f9f9,
+    "primary" #fff #140c40 none pointer #140c40 #fff #140c40,
+    "success" #fff #4cd3e3 none pointer #4cd3e3 #fff #4cd3e3,
+    "info" #fff #38a4ff none pointer #38a4ff #fff #38a4ff,
+    "warning" #fff #f4e700 none pointer #f4e700 #fff #f4e700,
+    "danger" #fff #f44a40 none pointer #f44a40 #fff #f44a40,
+    "link" #415094 #f9f9f9 underline pointer #415094 #fff #fff,
+    "disable" #fff #f9f9f9 none not-allowed #fff #f9f9f9 #f9f9f9;
+
+// element button-border
+// Còn phần này ngược lại th rút lại biến 
+
+
+
+// element button // Nooo nhiều biến quá// có hover nua ma
+@each $name,$color,$background,$textDecoration,$cursor,$colorHover,$backgroundHover,$borderHover in $buttons{
+    .#{$name}{
+        color: $color;
+        background: $background;
+        text-decoration: $textDecoration;
+        transition: all 0.4s ease-in-out;
+        cursor: $cursor;
+        border: 1px solid $background;
+        &:hover{
+            color: $colorHover;
+            background: $backgroundHover;
+            border: 1px solid $borderHover;
+        }
+    }
+}
+
+$buttonsBorders:
+    "default-border" #415094 #f9f9f9 none pointer #fff #fff ,
+    "primary-border" #fff #140c40 none pointer #140c40 #fff ,
+    "success-border" #fff #4cd3e3 none pointer #4cd3e3 #fff ,
+    "info-border" #fff #38a4ff none pointer #38a4ff #fff ,
+    "warning-border" #fff #f4e700 none pointer #f4e700 #fff ,
+    "danger-border" #fff #f44a40 none pointer #f44a40 #fff ,
+    "link-border" #415094 #f9f9f9 underline pointer #415094 #fff ,
+    "disable-border" #fff #f9f9f9 none not-allowed #fff #f9f9f9 ;
+// element button-border
+@each $name,$color,$background,$textDecoration,$cursor,$colorHover,$backgroundHover in $buttonsBorders{
+    .#{$name}{
+        color: $colorHover;
+        background: $backgroundHover;
+        text-decoration: $textDecoration;
+        transition: all 0.4s ease-in-out;
+        cursor: $cursor;
+        border: 1px solid $background;
+        &:hover{
+            color: $color;
+            background: $background;
+            border: 1px solid $background;
+        }
+    }
+}
+
+// elements button-extra
+// Bị trùng nè đặt 1 biến 
+$buttonExtra:
+    "extra-large" 0 40px 50px #fff #140c40 ,
+    "large" 0 30px 45px #fff #4cd3e3 ,
+    "extra-default" 0 28px 40px #fff #140c40 ,
+    "medium" 0 30px 31px #fff #4cd3e3 ,
+    "small" 0 31px 24px #fff #140c40 ;
+
+//element button-extra
+@each $name,$y,$x,$lineHeight,$color,$background in $buttonExtra{
+    .#{$name}{
+        padding: $y $x;
+        line-height: $lineHeight;
+        color: $color;
+        background: $background;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        border: 1px solid $background;
+        &:hover{
+            color: $background;
+            background: transparent;
+            border: 1px solid $background;
+        }
+    }
+}
+
+$buttonExtraBorder:
+    "extra-large-border" 0 40px 50px #fff #140c40 ,
+    "large-border" 0 30px 45px #fff #4cd3e3  ,
+    "extra-default-border" 0 28px 40px #fff #140c40 ,
+    "medium-border" 0 30px 31px #fff #4cd3e3 ,
+    "small-border" 0 31px 24px #fff #140c40 ;
+
+
+//element button-extra border
+@each $name,$y,$x,$lineHeight,$color,$background in $buttonExtraBorder{
+    .#{$name}{
+        padding: $y $x;
+        line-height: $lineHeight;
+        color: $background;
+        background: transparent;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        border: 1px solid $background;
+        &:hover{
+            color: $color;
+            background: $background;
+            border: 1px solid $color;
+        }
+    }
+}

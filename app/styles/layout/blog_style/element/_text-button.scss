@@ -1,0 +1,101 @@
+.elements{
+    &__text--essay{
+        padding-top: 11rem;
+        padding-bottom: 9rem;
+    }
+    &__text--title{
+        font-size: 24px;
+        font-family: $primary-font;
+        color: $title-color;
+        font-weight: 400;
+        text-transform: capitalize;
+        margin-bottom: 3rem;
+    }
+    &__text--para{
+        line-height: 1.9;
+    }
+    &__button--contain{
+        padding: 7rem 0 7rem;
+        border-top: 1px solid #eee;
+        .element__button--link-extra{
+            display:inline-block;
+            outline: none;
+            font-size: .8em;
+            text-align: center;
+            font-family: $second-font;
+            font-weight: 500;
+        }
+        .element__button--link-extra:last-child{
+            margin-right: 0;
+        }
+        .element__button--link-extra:not(:last-child){
+            margin-top: 10px;
+            margin-right: 16px;
+        }
+    }
+    &__button--list{
+        padding-top: 1rem;
+    }
+    &__button--list-radius,&__button--list-circle,&__button--list-arrow,&__button--list-extra{
+        margin-top: 4rem;
+    }
+    &__button--link{
+        display:inline-block;
+        outline: none;
+        line-height: 40px;
+        padding: 0 30px;
+        font-size: .8em;
+        text-align: center;
+        font-family: $second-font;
+        font-weight: 500;
+        text-transform: capitalize;
+        &.radius{
+            border-radius: 3px;
+        }
+        &.circle{
+            border-radius: 20px;
+        }
+        &.arrow{
+            display: inline-flex;
+            align-items: center;
+            padding: 0 34px;
+        }
+    }
+    &__button--link:last-child{
+        margin-right: 0;
+    }
+    &__button--link:not(:last-child){
+        margin-top: 10px;
+        margin-right: 16px;
+    }
+    &__button--lowerRow{
+        margin-top: 1rem;
+    }
+    @include maxWidth(1025px){
+        &__text,&__button{
+            .container{
+                margin: 0 3.2rem;
+            }
+        }
+        &__button--contain{
+            padding: 7rem 0 7rem;
+        }
+    }
+    @include maxWidth(769px){
+        &__text, &__button{
+            .container{
+                margin: 0 2rem;
+            }
+        }
+    }
+    @include maxWidth(480px){
+        &__text,&__button{
+            .container{
+                margin: 0;
+            }
+        }
+        &__button--contain{
+            padding: 7rem 0 0;
+        }
+    }
+}

@@ -1,0 +1,99 @@
+.quote{
+    &__typography{
+        padding-top: 5rem;
+        padding-bottom: 6.5rem;
+        border-top: 1px dotted #eee;
+    }
+    &__typography--contain{
+        display:flex;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    &__typography--item{
+        padding: 0 15px;
+        width: 33.33%;
+    }
+    &__typography--title{
+        margin-bottom: 22px;
+        font-size: 18px;
+        font-family: $primary-font;
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+    &__typography--list{
+         & h1,h2,h3,h4,h5,h6{
+             color: #828bb2;
+             margin-bottom: 10px;
+             font-family: $primary-font;
+         }
+         h1{
+             @include elementFontSize(25px, 400);
+         }
+         h2{
+             @include elementFontSize(22.5px, 300);
+         }
+         h3{
+             @include elementFontSize(20px, 300);
+         }
+         h4{
+             @include elementFontSize(17.5px, 300);
+         }
+         h5{
+            @include elementFontSize(15px, 300);
+         }
+         h6{
+            @include elementFontSize(12.5px, 300);
+         }
+    }
+    &__typography--unordered-list li{
+        color: #212529;
+        font-size: 16px;
+        text-transform: capitalize;
+        position: relative;
+        padding-left: 30px;
+        line-height: 29px;
+        &:before{
+            content: "";
+            position: absolute;
+            height: 14px;
+            width: 14px;
+            border: 3px solid #140c14;
+            border-radius: 50%;
+            left: 0;
+            top:4px;
+        }
+    }
+    &__typography--ordered-list{
+        margin-left: 30px;
+        padding-left: 40px;
+    }
+    &__typography--ordered-list li{
+        list-style-type: decimal-leading-zero;
+        color: #140c40;
+        font-weight: 500;
+        line-height: 29px;
+        & span{
+            font-weight: 300;
+            color: #828bb2;
+        }
+    }
+    &__typography--ordered-alpha,&__typography--ordered-beta{
+        padding-left: 40px;
+    }
+    &__typography--ordered-alpha li{
+        margin-left: 30px;
+        list-style-type: lower-alpha;
+    }
+    &__typography--ordered-beta li{
+        margin-left: 30px;
+        list-style-type: lower-roman;
+    }
+    @include maxWidth(480px){
+        &__typography--contain{
+            display: block;
+        }
+        &__typography--item{
+            width: 100%;
+        }
+    }
+}

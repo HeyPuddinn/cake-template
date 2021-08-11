@@ -1,0 +1,130 @@
+section.quote
+    .container
+        .quote__form--contain
+            form.quote__form
+                h3.quote__typography--title Form element
+                input(type="text",placeholder="First Name", name="name")
+                input(type="text",placeholder="Last Name", name="lastname")
+                input(type="text",placeholder="Last Name", name="lastname")
+                input(type="email",placeholder="Email address", name="email")
+                input(type="text",placeholder="Address", name="address" class="address")
+                .quote__form--place
+                    .quote__form--place-icon
+                        i.fa.fa-plane
+                    .quote__form--place-option
+                        select
+                            option(value="1") City
+                            option(value="1") Dhaka
+                            option(value="1") Dilli
+                            option(value="1") NewYork
+                            option(value="1") Islambad
+                        .quote__form--place-table
+                            span.quote__form--place-current City
+                            ul.quote__form--place-list
+                                li.option City
+                                li.option Dhaka
+                                li.option Dilli
+                                li.option NewYork
+                                li.option Islambad
+                .quote__form--place
+                    .quote__form--place-icon
+                        i.fa.fa-globe
+                    .quote__form--place-option
+                        select
+                            option(value="1") Country
+                            option(value="1") Banglades
+                            option(value="1") India
+                            option(value="1") England
+                            option(value="1") Srilanka
+                        .quote__form--place-table-country
+                            span.quote__form--place-country-current Country
+                            ul.quote__form--place-list-country
+                                li.option Country
+                                li.option Banglades
+                                li.option India
+                                li.option England
+                                li.option Srilanka
+                textarea(type=text, name="message", placeholder="Message")
+                input(type="text",placeholder="Primary color", name="primaryColor")
+                input(type="text",placeholder="Accent color", name="accentColor")
+                input(type="text",placeholder="Secondary color", name="secondaryColor")
+
+            .quote__form--switch
+                .quote__switch
+                    h3.quote__typography--title switches
+                    ol.quote__switch--list-switches
+                        +quoteSwitchList
+                        +quoteSwitchList("02. Primary Color Switch")
+                        +quoteSwitchList("03. Confirm Color Switch","switch confirm-color")
+                    h3.quote__typography--title.selectBox Selectboxes
+                    .quote__form--selectBox
+                        .quote__form--selectBox-option
+                            select
+                                option(value="1") English
+                                option(value="1") Spanish
+                                option(value="1") Arabic
+                                option(value="1") Portuguise
+                                option(value="1") Bengali
+                            .quote__form--selectBox-table
+                                span.quote__form--selectBox-current English
+                                ul.quote__form--selectBox-list
+                                    li.option English
+                                    li.option Spanish
+                                    li.option Arabic
+                                    li.option Portuguise
+                                    li.option Bengali
+                    h3.quote__typography--title CheckBoxes
+                    ol.quote__checkbox--list
+                        li
+                            span 01. Sample Checkbox
+                            label.checkboxes
+                                input(type="checkbox", checked)
+                                span.checker
+                        li
+                            span 02. Primary Color Checkbox
+                            label.checkboxes
+                                input(type="checkbox", checked)
+                                span.checker
+                        li
+                            span 03. Confirm Color Checkbox
+                            label.checkboxes.success-checkbox
+                                input(type="checkbox", checked)
+                                span.checker
+                        li
+                            span 04. Disabled Checkbox
+                            label.checkboxes.disable-checkbox
+                                input(type="checkbox", disabled)
+                                span.checker
+                        li
+                            span 05. Disabled Checkbox active
+                            label.checkboxes.disable-checkbox-active
+                                input(type="checkbox", disable)
+                                span.checker
+                    .quote__radios
+                        h3.quote__typography--title Radios
+                        ol.quote__radios--list
+                            li
+                                span 01. Sample radio
+                                label.checkRadio
+                                    input(type="checkbox")
+                                    span.radio-checker
+                            li
+                                span 02. Primary Color radio
+                                label.checkRadio
+                                    input(type="checkbox")
+                                    span.radio-checker
+                            li
+                                span 03. Confirm Color radio
+                                label.checkRadio.success-radio
+                                    input(type="checkbox")
+                                    span.radio-checker
+                            li
+                                span 04. Disabled radio
+                                label.checkRadio.disable-radio
+                                    input(type="checkbox", disabled)
+                                    span.radio-checker
+                            li
+                                span 05. Disabled radio active
+                                label.checkRadio.disable-radio-active
+                                    input(type="checkbox", disabled)
+                                    span.radio-checker

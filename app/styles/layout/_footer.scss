@@ -1,0 +1,190 @@
+.footer{
+    background: $background-bottom-color;
+    padding-top: 10rem;
+    &__contain{
+        padding-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item--logo{
+        width: 40%;
+        padding: 0 2rem 0 0;
+        &-link img{
+            width: 134px;
+            height: 50px;
+        }
+    }
+    &__item--text{
+        margin-top: 4rem;
+        font-size: 16px;
+        color: $text-color;
+        line-height: 1.7;
+        margin-right: 3rem;
+    }
+    &__item--icon{
+        margin-top: 3rem;
+        display: flex;
+        &-link{
+            margin: 0 12px;
+            font-size: 22px;
+            color: $primary-color;
+            font-family: $primary-font;
+            & i{
+                transition: transform 0.3s ease-in-out;
+            }
+            & i:hover{
+                transform: translateY(-5px);
+            }
+        }
+    }
+    &__item--content{
+        width: 20%;
+        padding: 0 2rem;
+    }
+    &__item--title{
+        width: 100%;
+        font-size: 20px;
+        color: $title-color;
+        font-family: $primary-font;
+        font-weight: 300;
+    }
+    &__item--text{
+        display: flex;
+        flex-direction:column;
+        &-link{
+            font-size: 16px;
+            color: $text-color;
+            font-family: $second-font;
+            font-weight: normal;
+            text-transform:capitalize;
+            margin-bottom: 12px;
+            transition: all .5s ease-in-out;
+            &:hover{
+                color: $primary-color;
+                text-decoration: underline;
+            }
+        }
+    }
+    &__item--info{
+        width: 30%;
+        padding: 0 0 0 2rem;
+    }
+    &__item--contact{
+        margin-top: 5rem;
+    }
+    &__item--address{
+        font-size: 16px;
+        color: $text-color;
+        font-family: $second-font;
+        margin-bottom: 3.5rem;
+    }
+    &__item--phone{
+        font-size: 24px;
+        color: $primary-color;
+    }
+    &__end{
+        text-align: center;
+        padding-top:14rem;
+        padding-bottom: 2.5rem;
+    }
+    &__end--text{
+        font-size: 14px;
+        color: $text-color;
+        i,a{
+            color: $primary-color;
+        }
+    }
+    .scrollToTop{
+        height: 50px;
+        width: 50px;
+        background: $primary-color;
+        border-radius: 50%;
+        display:block;
+        text-align:center;
+        color:#fff;
+        box-shadow: 0 0 10px 3px rgba(108, 98,98,0.2);
+        position:fixed;
+        bottom:20px;
+        right:40px;
+        z-index: 99;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .4s ease-in-out;
+        & i{
+            font-size: 26px;
+            transform: translateY(50%)
+        }
+        &.active{
+            opacity:1;
+            // display:block;
+            visibility: visible;
+        }
+    }
+    @include maxWidth(1025px){
+        &__contain{
+            margin: 0 3.5rem;
+        }
+        &__item--logo{
+            padding:0;
+        }
+        &__item--address{
+            padding-right: 2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        .scrollToTop{
+            right: 35px;
+            & i{
+                font-size: 20px;
+                transform: translateY(70%)
+            }
+        }
+    }
+    @include maxWidth(769px){
+        &__contain{
+            display:grid;
+            margin: 0 2rem;
+            grid-template-columns: repeat(2, 50%);
+            column-gap: 14rem;
+            row-gap: 5rem;
+        }
+        &__item--logo,&__item--content:not(:nth-child(2)){
+            width: 100%;
+            padding: 0;
+        }
+        &__item--content:nth-child(2), &__item--info{
+            width: 50%;
+            padding: 0;
+        }
+        &__item--phone{
+            font-size: 20px;
+        }
+        &__end{
+            padding-top: 6rem;
+        }
+    }
+    @include maxWidth(480px){
+        padding-top: 5rem;
+        &__contain{
+            grid-template-columns: repeat(1, 100%);
+            margin: 0;
+        }
+        &__item--content,&__item--info{
+            width: 100%;
+        }
+        &__item--phone{
+            font-size:24px;
+        }
+        &__end{
+            padding-top: 8rem;
+            padding-bottom: 1.2rem;
+        }
+        &__end--text{
+            line-height: 2;
+            margin-bottom: 0;
+        }
+        .scrollToTop{
+            right: 16px;
+        }
+    }
+}

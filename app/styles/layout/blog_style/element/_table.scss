@@ -1,0 +1,119 @@
+.quote{
+    &__table{
+        padding-bottom: 5rem;
+    }
+    &__table--contain{
+        margin-top: 3rem;
+        overflow-x: scroll;
+    }
+    &__table--content{
+        background: #f9f9ff;
+        padding: 15px 0 30px 0;
+        min-width: 800px;
+    }
+    &__table--header{
+        display:flex;
+    }
+    &__table--order,&__table--row-order{
+        width: 14.84%;
+        padding-left: 30px;
+    }
+    &__table--country,&__table--row-country{
+        width: 35.27%;
+    }
+    &__table--visit,&__table--row-visit{
+        width: 24.84%;
+    }
+    &__table--percentage, &__table--row-percentage{
+        width: 50.75%;
+        padding-right: 50px;
+    }
+    &__table--order-text,
+    &__table--country-text,
+    &__table--visit-text,
+    &__table--percentage-text{
+        color: #415094;
+        line-height: 40px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    &__table--row{
+        display:flex;
+        border-top: 1px solid #edf3fd;
+        padding: 15px 0 ;
+    }
+    &__table--row-order,
+    &__table--row-country,
+    &__table--row-visit,
+    &__table--row-percentage{
+        display:flex;
+        align-items: center;
+    }
+    &__table--row-country-text{
+        margin-left: 18px;
+    }
+    &__table--row-country img{
+        width: 51px;
+        height: 31px;
+    }
+    &__table--row-percentage--percent{
+        width: 80%;
+        border: 2px solid #6382e6;
+    }
+
+    // gallery image
+    &__gallery{
+        padding-bottom: 5rem;
+    }
+    &__gallery--contain{
+        padding-top: 8px;
+        display:flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    &__gallery--item-3{
+        display:flex;
+        max-width: 33.33%;
+        // height: 100%;
+        padding: 0 15px;
+    }
+    &__gallery--item-3-link{
+        height: 200px;
+        margin-top: 3rem;
+        width: 396px;
+        & img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__gallery--item-2{
+        display: flex;
+        max-width: 50%;
+        padding: 0 15px;
+    }
+    &__gallery--item-2-link{
+        height: 200px;
+        margin-top: 3rem;
+        width: 570px;
+        & img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    @include maxWidth(480px){
+        &__gallery--contain{
+            flex-direction: column;
+        }
+        &__gallery--item-3,
+        &__gallery--item-2{
+            max-width: 100%;
+        }
+        &__gallery--item-3-link,
+        &__gallery--item-2-link{
+            width: 100%;
+        }
+    }
+}

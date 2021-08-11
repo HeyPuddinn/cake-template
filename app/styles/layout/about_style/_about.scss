@@ -1,0 +1,5 @@
+.product-a{
+    @include maxWidth(769px){
+        padding-top: 7rem;
+    }
+}

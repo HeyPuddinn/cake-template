@@ -1,0 +1,45 @@
+section.main.main-p
+    +headerMain("About Us")
+section.product.product-a
+    .container
+        .product__image
+            img(src="../images/img-product.png").product__image--img
+        .product__content
+            p.product__content--name Fresh & Delicious
+            h1.product__content--title A Simple Way to Eating Delicious
+            p.product__content--text Land behold it created good saw after she'd Our set living. Signs midst dominion creepeth morning laboris nisi ufsit aliquip ex ea commodo conse quat is aute irure, quis nostrud exer.
+            a(href="#").product__content--btn Our Story
+
+section.features
+    .features__image
+        img(src="../images/img-features.png")
+    .container
+        +itemHeader("Our Features","Quality is Our First Priority")
+        .features__list
+            +itemFeatures
+            +itemFeatures("../images/icon2.svg")
+            +itemFeatures("../images/icon3.svg")
+
+section.video
+    .container
+        .video__played
+            a(href="https://www.youtube.com/watch?v=up68UAfH0d0").video__btn
+                i.fas.fa-play.video__icon
+            
+section.team
+    .container
+        +itemHeader("Testimonal","What Customers Say")
+        .team__contain
+            +teamMember
+            +teamMember("../images/img-team-member1.png")
+            +teamMember
+            +teamMember("../images/img-team-member1.png")
+    .team__image
+        +teamCake("../images/img-team-cake1.png")
+        +teamCake("../images/img-team-cake2.png")
+        +teamCake("../images/img-team-cake3.png")
+        +teamCake("../images/img-team-cake4.png")
+        +teamCake("../images/img-team-cake1.png")
+        +teamCake("../images/img-team-cake2.png")
+        +teamCake("../images/img-team-cake3.png")
+        +teamCake("../images/img-team-cake4.png")

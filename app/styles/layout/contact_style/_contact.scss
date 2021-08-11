@@ -1,0 +1,206 @@
+.main-c{
+    .main-p__content{
+        padding-top: 5rem;
+    }
+    @include maxWidth(480px){
+        .main-p__content{
+            padding-top: 0;
+        }
+    }
+}
+
+#map{
+    margin: 10rem 9rem 3rem;
+    height: 480px;
+    @include maxWidth(1025px){
+        margin-left: 4.5rem;
+        margin-right: 4.5rem;
+    }
+    @include maxWidth(769px){
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+    @include maxWidth(480px){
+        display: none;
+    }
+}
+
+.contact{
+    margin: 5rem 9rem 0;
+    padding-bottom: 10rem;
+    display:flex;
+    flex-wrap: wrap;
+    &__header{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    &__header--text{
+        font-size: 26px;
+        font-family: $primary-font;
+        font-weight: 600;
+    }
+    &__info{
+        width:66.67%;
+    }
+    &__info--mess{
+        height: 180px;
+        padding-left: 18px;
+        padding-top: 3px;
+        width: 98.5%;
+        border: 1px solid #e5e6e9;
+        font-size: 13px;
+        outline:none;
+        font-family: $primary-font;
+        line-height: 1.6;
+        @include focusFormInput;
+        &::placeholder{
+            opacity: 0.7;
+            text-transform: capitalize;
+            font-weight: 600;
+            // font-size: 14px;
+        }
+    }
+    &__info--name,&__info--mail{
+        @include formInput;
+        width: 100%;
+        @include focusFormInput;
+    }
+    &__info--mail{
+        margin-left: 23px;
+    }
+    &__info--subject{
+        @include formInput;
+        width: 98.5%;
+        @include focusFormInput;
+    }
+    &__info--btn{
+        margin-top: 6px;
+        margin-bottom: 3rem;
+        padding: 22px 45px;
+        border: 1px solid $primary-color;
+        background: transparent;
+        outline: none;
+        color: $primary-color;
+        letter-spacing:2px;
+        font-weight: 200;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        &:hover{
+            color: #fff;
+            background: $primary-color;
+        }
+    }
+    &__list{
+        width: 33.33%;
+    }
+    &__item--info{
+        margin-left: 16px;
+
+    }
+    &__item{
+        margin-left: 12rem;
+        margin-bottom: 6rem;
+        display: flex;
+        & i{
+            width: 28px;
+            font-size: 27px;
+            color: #8f9195;
+        }
+    }
+    &__item--address{
+        font-size: 16px;
+        color: #2a2a2a;
+        margin-bottom: 10px;
+        font-family: $primary-font;
+        font-weight: 300;
+    }
+    &__item--number{
+        font-size: 16px;
+        color: #8a8a8a;
+        line-height: 1.4;
+    }
+    @include maxWidth(1025px){
+        margin-left: 4.5rem;
+        margin-right: 4.5rem;
+        padding-bottom: 5rem;
+        &__item{
+            margin-left: 10rem;
+        }
+    }
+    @include maxWidth(769px){
+        margin-left: 4rem;
+        margin-right: 4rem;
+        padding-bottom: 2rem;
+        &__info{
+            width: 100%;
+        }
+        &__list{
+            width: 100%;
+        }
+        &__info--mess{
+            width: 100%;
+        }
+        &__info--name, &__info--mail{
+            width: 100%;
+        }
+        &__info--subject{
+            width: 100%;
+        }
+        &__item{
+            margin-left: 0;
+        }
+        .form__error--mail{
+            margin-left: 23px;
+        }
+    }
+    @include maxWidth(480px){
+        margin: 7rem 15px 0;
+        &__info--mail, &__info--name{
+            width: 100%;
+            margin-left: 0;
+        }
+        .form__group:nth-child(2),
+        .form__group:nth-child(3){
+            width: 100%;
+            display:block;
+        }
+        .form__error--mail{
+            margin-left: 0px;
+        }
+    }
+
+}
+
+.form__group{
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    & input{
+        @include focusFormInput;
+    }
+}
+.form__group:not(:first-child){
+    height: 68px;
+}
+
+.form__group:nth-child(2),
+.form__group:nth-child(3){
+    width: 47.5%;
+    display:inline-flex;
+}
+.form__error--mail,
+.form__error--name,
+.form__error--mess,
+.form__error--subject{
+    font-size: 14px;
+    display:none;
+}
+
+
+.form__error--mail{
+    margin-left: 23px;
+}
+.error{
+    display: block;
+}
+

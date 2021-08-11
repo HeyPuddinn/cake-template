@@ -1,0 +1,37 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+
+@import "base/typography";
+@import "helpers/global";
+@import "helpers/ultilities";
+
+@import "layout/home_style/main";
+@import "layout/home_style/items";
+@import "layout/home_style/product";
+@import "layout/home_style/features";
+@import "layout/home_style/video";
+@import "layout/home_style/team";
+
+@import "layout/product_style/main-p";
+@import "layout/about_style/about";
+@import "layout/contact_style/contact";
+
+@import "layout/blog_style/element/text-button";
+@import "layout/blog_style/element/quotes";
+@import "layout/blog_style/element/table";
+@import "layout/blog_style/element/typography";
+@import "layout/blog_style/element/form";
+
+@import "layout/blog_style/blog-detail/main-detail";
+
+@import "layout/blog_style/blog";
+
+
+
+@import "layout/header";
+@import "layout/structures";
+@import "layout/footer";
+
+@import "components/button";
+@import "components/switch";

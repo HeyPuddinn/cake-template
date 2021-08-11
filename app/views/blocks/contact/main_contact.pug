@@ -1,0 +1,27 @@
+section.main.main-p.main-c
+    +headerMain("Contact")
+#map
+
+section.contact
+    .contact__header
+        h1.contact__header--text Get in Touch
+    .contact__info
+        form#form-1.contact__form
+            .form__group
+                textarea(name='message', rows='10', cols='30', placeholder='Enter message', class="contact__info--mess", onkeydown="showVariable(this.value.length)")
+                span.form__error--mess um...yea, you have to write something to send this form.
+            .form__group
+                input(type='text', placeholder='Enter your name', name='name',  class="contact__info--name")
+                span.form__error--name come on, you have a name, don't you?
+            .form__group
+                input(type='email', placeholder='Email', name='mail', class="contact__info--mail")
+                span.form__error--mail no email, no message
+            .form__group
+                input(type='text', placeholder='Enter subject', name='subject', class="contact__info--subject")
+                span.form__error--subject come on, you have a subject, don't you?
+            button(type='submit', class="contact__info--btn") SEND
+    .contact__list
+        +itemContactItem
+        +itemContactItem("fa fa-tablet", "+1 253 565 2365", "Mon to Fri 9am to 6pm")
+        +itemContactItem("fa fa-envelope", "support@colorlib.com","Send us your query anytime!")
+            

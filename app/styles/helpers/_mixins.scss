@@ -1,0 +1,182 @@
+@mixin hoverHeader{
+    &:after{
+        content: '';
+        position: absolute;
+        height: 3px;
+        width:0;
+        bottom: 0 ;
+        left: 0;
+        background-color: $primary-color;
+        transition: all 0.5s ease-in-out;
+    }
+    &:hover::after{
+        width: 100%;
+    }
+    &:hover{
+        color: $primary-color;
+    }
+}
+
+@mixin animation-mixin($name,$top1, $top2) {
+    @keyframes #{$name} {
+        0% {
+            top: $top1;
+            opacity: 0.7;}
+        100% {
+            top: $top2;
+            opacity: 1;
+      }
+    }
+}
+
+@mixin btnPrimary{
+    color: #fff;
+    font-family: $primary-font;
+    border-radius: 30px;
+    text-transform: capitalize;
+    background-size: 200%;
+    transition: 0.6s;
+    background-image: linear-gradient(to left, $primary-color, $second-color, $primary-color);
+    background-position: right;
+    box-shadow: 0px 17px 27px rgba(240, 69, 6,  0.27);
+    &:hover{
+        background-position: left;
+    }
+}
+
+@mixin maxWidth($width){
+    @media screen and (max-width: $width){
+        @content;
+    }
+}
+
+@mixin minWidth($width){
+    @media screen and (min-width: $width){
+        @content;
+    }
+}
+
+
+@mixin slideDownMenu($height){
+    max-height:0;
+    overflow: hidden;
+    transition:all 0.4s ease-in-out;
+    &.show{
+        max-height: $height;
+    }
+}
+
+@mixin animationHeartbeat($animation){
+    @keyframes #{$animation}{
+        to{
+            transform: scale(1.03);
+        }
+    }
+}
+
+@mixin animationNavbar($name){
+    @keyframes #{$name} {
+        0% {
+           opacity: 0;
+           transform: translateY(-20px);
+        }
+        100% {
+           opacity: 1;
+           transform: translateY(0);
+        }
+     } 
+}
+
+@mixin slickArrow{
+    .slick-arrow{
+        background:transparent;
+        font-size: 50px;
+        color: $primary-color;
+        border: 0;
+        cursor: pointer;
+    }
+    .fal{
+        font-weight: 100;
+    }
+    .slick-prev{
+        position: relative;
+        left: -10px;
+    }
+    .slick-next{
+        position: relative;
+        right: -10px;
+    }
+    .slick-initialized{
+        justify-content:space-around;
+    }
+}
+
+@mixin formInput{
+    font-size: 13px;
+    font-family: $primary-font;
+    line-height:1.6;
+    border: 1px solid #e5e6e9;
+    outline:none;
+    padding: 13px 20px;
+        &::placeholder{
+            opacity: 0.7;
+            text-transform: capitalize;
+            font-weight: 600;
+        }
+}
+
+@mixin focusFormInput{
+    &:focus{
+        outline: 1px solid $primary-color;
+        border-radius: none;
+    }
+}
+
+// element-table-percentage
+
+$percentages:
+    "canada" 80% #6382e6,
+    "usa" 30% #e66686,
+    "england" 55% #f09359,
+    "germany" 60% #73fbaf,
+    "australia" 40% #73fbaf,
+    "china" 70% #6382e6,
+    "banglades" 30% #a367e7,
+    "belgium" 60% #e66686;
+
+
+@each $name,$width,$borderColor in $percentages{
+    .#{$name} .quote__table--row-percentage--percent{
+        width: $width;
+        border-color:$borderColor;
+    }
+}
+
+@mixin elementFontSize($size,$weight){
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin animationTable($name) {
+    @keyframes #{$name} {
+        0% {
+           transform: scale(0.75) translateY(-27px);
+        }
+        100% {
+            transform: scale(1) translateY(0);
+      }
+    }
+}
+
+@mixin animationMainHeader($name,$y){
+    @keyframes #{$name}{
+        from{
+            top: $y;
+            transition: 4s;
+        }
+        to{
+            top: 0px;
+            transition: 4s;
+        }
+    }
+}

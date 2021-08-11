@@ -1,0 +1,210 @@
+mixin itemHeader(title= "Most Popular", desc= "Our Exclusive Cakes")
+    .items__header
+        p.items__header--title= title
+        h1.items__header--desc= desc
+
+mixin loadContainer
+    .load-container
+        .loading-screen
+            .loading-circle
+            .loading-image
+                img(src="../images/img-load.png")
+                
+mixin itemsProduct(src="../images/img-item1.png", title="Sweetheart", text="Land behold it created good saw after she'd our set.", btn="$20 I Order Now" )
+    .items__product
+        .items__product--image
+            img(src= src).items__product--img
+        .items__product--content
+            a(href="#").items__product--title= title
+            p.items__product--text= text
+        .items__product--price
+            a(href="#").items__product--btn.btn-primary= btn
+
+mixin itemFeatures(src= "../images/icon1.svg", title= "Pet Boarding",text= "consectetur adipiscing elit, serfd dgo eiusmod tempor incididunt ut ore et dolore magna aliqua.")
+    .features__item
+        .features__item--img
+            img(src= src)
+        .features__content
+            a(href="#").features__content--title= title
+            p.features__content--text= text
+
+mixin teamMember(src="../images/img-team-member2.png", detail= "Leather detail shoulder contrastic colour contour stunning silhouette working peplum. Statement buttons cover-up tweaks patch.", name="Oliva jems", job="UX/UI designer")
+    .team__member
+        h1.team__member--detail= detail
+        .team__member--desc
+            img(src= src).team__member--image
+            .team__member--info
+                h2.team__member--name= name
+                p.team__member--job= job
+        
+mixin teamCake(src="../images/img-team-cake1.png", href="#")
+    .team__image--cake
+        img(src= src)
+        a(href= href).team__image--link
+            i.fab.fa-instagram
+
+mixin footerItemContent(title="Quick Links", ...items)
+    .footer__item--content
+        h4.footer__item--title= title
+        .footer__item--text
+            each item in items
+                a(href="#").footer__item--text-link= item
+
+
+//- header main Product 
+- var mainProduct = 'main-p';
+mixin headerMain(title="Our Products")
+    .main__small--cake
+        img(src="../images/img-home-header.png")
+    .container
+        .main__content(class= mainProduct + '__content')
+            .main__content--animation(class= mainProduct + '__content--animation')
+                h2.main__content--title-text(class= mainProduct + '__content--title-text') Delicious
+            .main__content--para(class= mainProduct + '__content--para')
+                h1.main__content--title(class= mainProduct + '__content--title')= title
+
+mixin itemContactItem(icon="fa fa-home", address="Buttonwood, California.", number="Rosemead, CA 91770")
+    .contact__item
+        i(class= icon)
+        .contact__item--info
+            h4.contact__item--address= address
+            p.contact__item--number= number
+            
+mixin elementsButtonLink( ...items)
+    .elements__button--upperRow
+        each item in items
+            a(href="#", class= item).elements__button--link= item
+
+mixin elementsButtonLinkBorder( ...items)
+    .elements__button--upperRow
+        each item in items
+            a(href="#", class= item + "-border").elements__button--link= item
+
+mixin elementsButtonLinkRadius( ...items)
+    .elements__button--upperRow
+        each item in items
+            a(href="#", class= item).elements__button--link.radius= item
+
+mixin elementsButtonLinkRadiusBorder( ...items)
+    .elements__button--upperRow
+        each item in items
+            a(href="#", class= item + "-border").elements__button--link.radius= item
+
+mixin elementsButtonLinkCircle( ...items)
+    .elements__button--upperRow
+        each item in items
+            a(href="#", class= item).elements__button--link.circle= item
+
+mixin elementsButtonLinkCircleBorder( ...items)
+    .elements__button--upperRow
+        each item in items
+            a(href="#", class= item + "-border").elements__button--link.circle= item
+
+mixin elementsButtonLinkCircleArrow( ...items)
+    .elements__button--upperRow
+        each item in items
+            a(href="#", class= item).elements__button--link.circle.arrow= item
+
+mixin elementsButtonLinkCircleArrowBorder( ...items)
+    .elements__button--upperRow
+        each item in items
+            a(href="#", class= item + "-border").elements__button--link.circle.arrow= item
+
+//- mixin elementsButtonLinkExtra( ...items)
+//-     .elements__button--upperRow
+//-         each item in items
+//-             a(href="#", class= item).elements__button--link-extra= item
+
+mixin quoteHeader(title="Left aligned")
+    .quote__contain--header
+        h3.quote__contain--title= title
+
+mixin quoteDefinitionItem(title="Definition 01", text="Recently, the US Federal government banned online casinos from operating in America by making it illegal to transfer money to them through any US bank or payment system. As a result of this law, most of the popular online casino networks")
+    .quote__definition--item
+        .quote__definition--title= title
+        .quote__definition--text= text
+
+mixin quoteTableRow(className="canada", order="01", src="../images/img-element-table-country1.png",country="Canada",visit="645032")
+    .quote__table--row(class= className)
+        .quote__table--row-order= order
+        .quote__table--row-country
+            img(src= src)
+            p.quote__table--row-country-text= country
+        .quote__table--row-visit= visit
+        .quote__table--row-percentage
+            .quote__table--row-percentage--percent
+
+mixin quoteSwitchList(title="01. Sample switch",className="switch")
+    li
+        span= title
+        label(class= className)
+            input(type="checkbox", checked)
+            span.slider.round
+
+mixin detailParagraph(para="MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower")
+    p.detail__left--paragraph= para
+
+mixin detailControlItem(className="detail__left--control-item",src="../images/img-detail-control1.png", classIcon="fa fa-arrow-left", title=" Prev post", link="Space the final fronier")
+    .detail__left--control-item(class= className)
+        .detail__left--control-img
+            a(href="#").detail__left--control-item-link
+                img(src= src)
+        .detail__left--control-arrow
+            a(href="#").detail__left--control-arrow-link
+                i(class= classIcon)
+        .detail__left--control-content
+            h2.detail__left--control-title= title
+            a(href="#").detail__left--control-link= link
+
+mixin detailCommentsItem(src="../images/img-detail-comments3.png", text="Multiply sea night grass fourth day sea lesser rule open subdue female fill which them Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser",name="Emily Blunt", date="December 4, 2017 at 3:12 pm")
+    .detail__left--comments-item
+        .detail__left--comments-image
+            img(src= src)
+        .detail__left--comments-info
+            p.detail__left--comments-text= text
+            .detail__left--comments-content
+                .detail__left--comments-content-para
+                    a(href="#").detail__left--comments-name= name
+                    p.detail__left--comments-date= date
+                a(href="#").detail__left--comments-reply REPLY
+
+mixin detailCategoryHeader(header="Category")
+    .detail__right--category-header
+        h1= header
+
+mixin detailCategoryItem(item="Restaurant food(37)")
+    .detail__right--category-item
+        a(href="#").detail__right--category-item-link= item
+    
+mixin detailPostItem(src="../images/img-detail-post1.png", title="From life was you fish...",date="January 12, 2019")
+    .detail__right--post-item
+        .detail__right--post-item-image
+            img(src= src)
+        .detail__right--post-item-content
+            a(href="#").detail__right--post-item-title= title
+            p.detail__right--post-item-date= date
+
+mixin detailFeedItem(src="../images/img-detail-feed1.png")
+    li.detail__right--feed-item
+        a(href="#")
+            img(src= src)
+
+mixin blogLeftItem(src='../images/img-detail1.png',day="15",month="Jan", header="Google inks pact for new 35-storey office", text=" That dominion stars lights dominion divide years for fourth have don't stars is that he earth it first without heaven in place seed it second morning saying.", name="Travel, Lifestyle", number="03 Comments")
+    .blog__left--item
+        .blog__left--item-image
+            img(src= src)
+            a(href="#").blog__left--item-date
+                p.blog__left--item-date-text= day
+                p= month
+        .blog__left--item-content
+            a(href="#").blog__left--item-header= header
+            p.blog__left--item-text= text
+            ul.detail__left--interact
+                li.detail__left--interact-info
+                    a(href="#").detail__left--interact-link
+                        i.fa.fa-user
+                        p.detail__left--interact-name= name
+                li.detail__left--interact-info
+                    a(href="#").detail__left--interact-link
+                        i.fa.fa-comments
+                        p.detail__left--interact-name= number

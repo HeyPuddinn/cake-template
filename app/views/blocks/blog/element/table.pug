@@ -1,0 +1,50 @@
+section.quote
+    .container
+        .quote__table
+            +quoteHeader("Table")
+            .quote__table--contain
+                .quote__table--content
+                    .quote__table--header
+                        .quote__table--order
+                            h2.quote__table--order-text #
+                        .quote__table--country
+                            h2.quote__table--country-text Countries
+                        .quote__table--visit
+                            h2.quote__table--visit-text Visits
+                        .quote__table--percentage
+                            h2.quote__table--percentage-text Percentages
+                    +quoteTableRow
+                    +quoteTableRow("usa","02","../images/img-element-table-country2.png","USA","123492")
+                    +quoteTableRow("england","03","../images/img-element-table-country3.png","England","234567")
+                    +quoteTableRow("germany","04","../images/img-element-table-country4.png","Germany","346457")
+                    +quoteTableRow("australia","05","../images/img-element-table-country5.png","Australia","634574")
+                    +quoteTableRow("china","06","../images/img-element-table-country6.png","China","154784")
+                    +quoteTableRow("banglades","07","../images/img-element-table-country7.png","Banglades","743263")
+                    +quoteTableRow("belgium","08","../images/img-element-table-country8.png","Beligum","346745")
+        .quote__gallery
+            +quoteHeader("Image Gallery")
+            .quote__gallery--contain
+                .quote__gallery--item-3
+                    a(href="#").quote__gallery--item-3-link
+                        img(src="../images/img-element-image1.png")
+                .quote__gallery--item-3
+                    a(href="#").quote__gallery--item-3-link
+                        img(src="../images/img-element-image2.png")
+                .quote__gallery--item-3
+                    a(href="#").quote__gallery--item-3-link
+                        img(src="../images/img-element-image3.png")
+                .quote__gallery--item-2
+                    a(href="#").quote__gallery--item-2-link
+                        img(src="../images/img-element-image4.png")
+                .quote__gallery--item-2
+                    a(href="#").quote__gallery--item-2-link
+                        img(src="../images/img-element-image5.png")
+                .quote__gallery--item-3
+                    a(href="#").quote__gallery--item-3-link
+                        img(src="../images/img-element-image6.png")
+                .quote__gallery--item-3
+                    a(href="#").quote__gallery--item-3-link
+                        img(src="../images/img-element-image7.png")
+                .quote__gallery--item-3
+                    a(href="#").quote__gallery--item-3-link
+                        img(src="../images/img-element-image8.png")

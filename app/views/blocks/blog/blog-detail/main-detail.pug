@@ -1,0 +1,121 @@
+section.main.main-p
+    +headerMain("Blog details")
+section.detail
+    .container
+        .detail__left
+            .detail__left--img
+                img(src='../images/img-detail1.png')
+            h1.detail__left--title-header Second divided from form fish beast made every of seas all gathered us saying he our
+            ul.detail__left--interact
+                li.detail__left--interact-info
+                    a(href="#").detail__left--interact-link
+                        i.fa.fa-user
+                        p.detail__left--interact-name Travel, Lifestyle
+                li.detail__left--interact-info
+                    a(href="#").detail__left--interact-link
+                        i.fa.fa-comments
+                        p.detail__left--interact-name 03 Comments
+            +detailParagraph
+            +detailParagraph("MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually")
+            .detail__left--content
+                p.detail__left--content-text MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training.
+            +detailParagraph
+            +detailParagraph("MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually")
+            .detail__left--like
+                .detail__left--like-info
+                    i.fa.fa-heart
+                    p.detail__left--like-text Lily and 4 people like this
+                .detail__left--like-icon
+                    a(href="#").detail__left--like-icon-link
+                        i.fab.fa-facebook
+                    a(href="#").detail__left--like-icon-link
+                        i.fab.fa-twitter
+                    a(href="#").detail__left--like-icon-link
+                        i.fab.fa-dribbble
+                    a(href="#").detail__left--like-icon-link
+                        i.fab.fa-behance
+            .detail__left--control
+                +detailControlItem
+                +detailControlItem("detail__left--control-item right-item","../images/img-detail-control2.png","fa fa-arrow-right","Next post","Telescopes 101")
+            .detail__left--personal
+                .detail__left--personal-image
+                    img(src="../images/img-detail-personal.png")
+                .detail__left--personal-info
+                    a(href="#").detail__left--personal-name Harvard milan
+                    p.detail__left--personal-text Second divided from form fish beast made. Every of seas all gathered use saying you're, he our dominion twon Second divided from
+            .detail__left--comments
+                h1.detail__left--comments-header 05 Comments
+                +detailCommentsItem("../images/img-detail-comments1.png")
+                +detailCommentsItem("../images/img-detail-comments2.png")
+                +detailCommentsItem("../images/img-detail-comments2.png")
+            .detail__left--form
+                h1.detail__left--comments-header Leave a Reply
+                .contact__info.detail__left--form-contain
+                    form#form-1.contact__form
+                        .form__group
+                            textarea(name='message', rows='10', cols='30', placeholder='Write Comment', class="contact__info--mess", onkeydown="showVariable(this.value.length)")
+                            span.form__error--mess No comment, no post :)
+                        .form__group
+                            input(type='text', placeholder='Enter your name', name='name',  class="contact__info--name")
+                            span.form__error--name come on, you have a name, don't you?
+                        .form__group
+                            input(type='email', placeholder='Email', name='mail', class="contact__info--mail")
+                            span.form__error--mail no email, no message
+                        .form__group
+                            input(type='text', placeholder='Website', name='subject', class="contact__info--subject")
+                            span.form__error--subject You don't have website?
+                        button(type='submit', class="contact__info--btn") POST COMMENT
+        .detail__right
+            //- search
+            .detail__right--search
+                .detail__right--search-input
+                    input(type="text", placeholder="Search Keyword")
+                    .detail__right--search-icon
+                        i.fa.fa-search
+                .button(type='submit', class="contact__info--btn detail__right--search-btn") SEARCH
+            //- category
+            .detail__right--category
+                +detailCategoryHeader
+                .detail__right--category-list
+                    +detailCategoryItem
+                    +detailCategoryItem("Travel news(10)")
+                    +detailCategoryItem("Modern technology(03)")
+                    +detailCategoryItem("Product(11)")
+                    +detailCategoryItem("Inspiration(21)")
+                    +detailCategoryItem("Health Care(21)")
+            //- recent post
+            .detail__right--post
+                +detailCategoryHeader("Recent Post")
+                .detail__right--post-list
+                    +detailPostItem
+                    +detailPostItem("../images/img-detail-post2.png","The Amazing Hubble","02 Hours ago")
+                    +detailPostItem("../images/img-detail-post3.png","Astronomy Or Astrology","03 Hours ago")
+                    +detailPostItem("../images/img-detail-post4.png","Asteroids telescopes","01 Hours ago")
+            //- tag cloud
+            .detail__right--tag
+                +detailCategoryHeader("Tag Clouds")
+                .detail__right--tag-list
+                    a(href="#").detail__right--tag-item project
+                    a(href="#").detail__right--tag-item love
+                    a(href="#").detail__right--tag-item technology
+                    a(href="#").detail__right--tag-item travel
+                    a(href="#").detail__right--tag-item restaurant
+                    a(href="#").detail__right--tag-item life style
+                    a(href="#").detail__right--tag-item design
+                    a(href="#").detail__right--tag-item illustration
+            //- instagram feeds
+            .detail__right--feed
+                +detailCategoryHeader("Instagram Feeds")
+                ul.detail__right--feed-list
+                    +detailFeedItem
+                    +detailFeedItem("../images/img-detail-feed2.png")
+                    +detailFeedItem("../images/img-detail-feed3.png")
+                    +detailFeedItem("../images/img-detail-feed4.png")
+                    +detailFeedItem("../images/img-detail-feed5.png")
+                    +detailFeedItem("../images/img-detail-feed6.png")
+            //- newsletter
+            .detail__right--letter
+                +detailCategoryHeader("Newsletter")
+                .detail__right--search-input.detail__right--letter-input
+                    input(type="text", placeholder="Enter email")
+                .button(type='submit', class="contact__info--btn detail__right--search-btn") SUBCRIBE

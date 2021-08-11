@@ -1,0 +1,96 @@
+.main-p{
+    height: 400px;
+    background-image: url("../images/img-product-header-bg.png");
+    &__content{
+        width: 100%;
+        padding: 0 0 0 25rem;
+    }
+    &__content--animation{
+        line-height: 0.8;
+    }
+    &__content--para{
+        margin-top: 4rem;
+    }
+    &__content--title{
+        width: 30rem;
+        text-transform: capitalize;
+    }
+    @include maxWidth(1025px){
+        &__content--animation{
+            line-height: 1;
+        }
+        &__content--title{
+            margin-left: 3rem;
+            font-size: 7rem;
+        }
+        &__content--para{
+            margin-top:2rem;
+        }
+    }
+    @include maxWidth(769px){
+        height: 342px;
+        &__content{
+            // margin-top: 2rem;
+            padding-top: 4rem;
+            padding-left: 21rem;
+        }
+        &__content--animation{
+            margin-left: 2rem;
+        }
+        &__content--title{
+            font-size: 6rem;
+            width: 30rem;
+        }
+    }
+    @include maxWidth(480px){
+        height:280px;
+        &__content{
+            padding: 0;
+            transform: translateY(90%)
+        }
+        &__content--animation{
+            margin: 0;
+        }
+        &__content--title-text{
+            font-size: 8rem;
+            width: 60%;
+        }
+        &__content--para{
+            margin: 0;
+        }
+        &__content--title{
+            width: 90%;
+            margin: 0 0 0 1rem;
+            font-size: 3.5rem;
+            transform: translateY(-50%);
+
+        }
+    }
+}
+
+.item-p{
+    // padding-top: 11rem;
+    padding-bottom: 5rem;
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(3, 33.33%);
+        row-gap: 32px;
+    }
+    .btn-primary{
+        @include btnPrimary;
+    }
+    @include maxWidth(769px){
+        &__list{
+            grid-template-columns: repeat(2, 50%);
+        }
+    }
+    @include maxWidth(480px){
+        padding-bottom: 0;
+        &__list{
+            grid-template-columns: repeat(1, 100%);
+        }
+    }
+    & + .team__image{
+        margin-top: 8rem;
+    }
+}

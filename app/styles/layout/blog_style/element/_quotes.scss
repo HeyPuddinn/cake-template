@@ -1,0 +1,142 @@
+.quote{
+    .right{
+        .quote__contain--header{
+            text-align: right;
+        }
+        .quote__contain--main{
+            flex-direction: row-reverse;
+        }
+        .quote__contain--text{
+            text-align: right;
+            margin-left: 0;
+        }
+        .quote__contain--image{
+            padding-left:18px;
+            padding-right: 0;
+        }
+        .quote__contain--text:last-child{
+            margin-top:15px;
+        }
+    }
+    &__contain--header{
+        padding: 5.5rem 0 0;
+        border-top: 1px dotted #eee;
+        text-align:left;
+    }
+    &__contain--title{
+        font-size: 18px;
+        font-family: $primary-font;
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+    &__contain--main{
+        margin-top: 3rem;
+        padding-bottom: 7rem;
+        display:flex;
+    }
+    &__contain--image{
+        width: 263px;
+        height: 180px;
+        padding-right: 18px;
+    }
+    &__contain--text{
+        padding: 0 18px;
+        font-size: 16px;
+        color: $title-color;
+        line-height:30px;
+        text-align:left;
+    }
+    // definition
+    &__definition{
+        padding-bottom: 5rem;
+    }
+    &__definition--list{
+        display: flex;
+        padding-top: 3rem;
+    }
+    &__definition--item{
+        width: 33.33%;
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+    &__definition--item:first-child{
+        margin-left:0;
+    }
+    &__definition--title{
+        font-size:16px;
+        font-family: $primary-font;
+        font-weight: 300;
+    }
+    &__definition--text{
+        margin-top: 3rem;
+        font-size: 16px;
+        line-height: 27px;
+        margin-bottom: 15px;
+    }
+
+    // block quote
+    &__block{
+        padding-bottom: 6rem;
+    }
+    &__block--content{
+        margin-top: 3rem;
+        padding: 30px 45px 30px 30px;
+        background: #f9f9ff;
+        border-left: 2px solid #140c40;
+    }
+    &__block--text{
+        font-size: 16px;
+        font-family: $second-font;
+        color: #140c40;
+        line-height: 24px;
+    }
+    @include maxWidth(1025px){
+        .container{
+            margin: 0 3.2rem;
+        }
+        &__contain--image{
+            width: 210px;
+            height: 143px;
+        }
+        &__definition--item{
+            margin-left:1.5rem;
+            margin-right: 1.5rem;
+        }
+        &__definition--text{
+            line-height: 30px;
+        }
+        &__block--content{
+            padding-right: 50px;
+        }
+    }
+    @include maxWidth(769px){
+
+    }
+    @include maxWidth(480px){
+        .container{
+            margin: 0;
+        }
+        &__contain--main{
+            display: block;
+        }
+        &__contain--text{
+            padding: 0;
+        }
+        .right{
+            .quote__contain--main{
+                display:flex;
+                flex-direction: column-reverse ;
+            }
+            .quote__contain--image{
+                margin-left:auto;
+            }
+        }
+        &__definition--list{
+            display:block;
+        }
+        &__definition--item{
+            width: 100%;
+            margin:0;
+        }
+    }
+}

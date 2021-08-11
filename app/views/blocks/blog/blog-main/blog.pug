@@ -1,0 +1,75 @@
+section.main.main-p.main-c
+    +headerMain("Blog")
+section.blog
+    .container
+        .blog__left
+            +blogLeftItem
+            +blogLeftItem("../images/img-blog-item1.png")
+            +blogLeftItem("../images/img-blog-item2.png")
+            +blogLeftItem("../images/img-blog-item3.png")
+            +blogLeftItem("../images/img-blog-item4.png")
+            ul.blog__left--pagination
+                li.blog__left--pagination-item
+                    a(href="#")
+                        i.fal.fa-angle-left
+                li.blog__left--pagination-item
+                    a(href="#") 1
+                li.blog__left--pagination-item
+                    a(href="#") 2
+                li.blog__left--pagination-item
+                    a(href="#")
+                        i.fal.fa-angle-right
+        .detail__right
+            //- search
+            .detail__right--search
+                .detail__right--search-input
+                    input(type="text", placeholder="Search Keyword")
+                    .detail__right--search-icon
+                        i.fa.fa-search
+                .button(type='submit', class="contact__info--btn detail__right--search-btn") SEARCH
+            //- category
+            .detail__right--category
+                +detailCategoryHeader
+                .detail__right--category-list
+                    +detailCategoryItem
+                    +detailCategoryItem("Travel news(10)")
+                    +detailCategoryItem("Modern technology(03)")
+                    +detailCategoryItem("Product(11)")
+                    +detailCategoryItem("Inspiration(21)")
+                    +detailCategoryItem("Health Care(21)")
+            //- recent post
+            .detail__right--post
+                +detailCategoryHeader("Recent Post")
+                .detail__right--post-list
+                    +detailPostItem
+                    +detailPostItem("../images/img-detail-post2.png","The Amazing Hubble","02 Hours ago")
+                    +detailPostItem("../images/img-detail-post3.png","Astronomy Or Astrology","03 Hours ago")
+                    +detailPostItem("../images/img-detail-post4.png","Asteroids telescopes","01 Hours ago")
+            //- tag cloud
+            .detail__right--tag
+                +detailCategoryHeader("Tag Clouds")
+                .detail__right--tag-list
+                    a(href="#").detail__right--tag-item project
+                    a(href="#").detail__right--tag-item love
+                    a(href="#").detail__right--tag-item technology
+                    a(href="#").detail__right--tag-item travel
+                    a(href="#").detail__right--tag-item restaurant
+                    a(href="#").detail__right--tag-item life style
+                    a(href="#").detail__right--tag-item design
+                    a(href="#").detail__right--tag-item illustration
+            //- instagram feeds
+            .detail__right--feed
+                +detailCategoryHeader("Instagram Feeds")
+                ul.detail__right--feed-list
+                    +detailFeedItem
+                    +detailFeedItem("../images/img-detail-feed2.png")
+                    +detailFeedItem("../images/img-detail-feed3.png")
+                    +detailFeedItem("../images/img-detail-feed4.png")
+                    +detailFeedItem("../images/img-detail-feed5.png")
+                    +detailFeedItem("../images/img-detail-feed6.png")
+            //- newsletter
+            .detail__right--letter
+                +detailCategoryHeader("Newsletter")
+                .detail__right--search-input.detail__right--letter-input
+                    input(type="text", placeholder="Enter email")
+                .button(type='submit', class="contact__info--btn detail__right--search-btn") SUBCRIBE

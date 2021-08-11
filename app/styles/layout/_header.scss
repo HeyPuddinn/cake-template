@@ -1,0 +1,346 @@
+.header{
+    &-navbar{
+        display:flex;
+        height: 8rem;
+        justify-content: space-between;
+        // border-bottom: 1px solid #ccc;
+        padding: 0 3rem;
+    }
+    @include animationNavbar(fadeInDown);
+    &-navbar-fixed{
+        top: 0 ;
+        z-index: 100;
+        position: fixed;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.082);
+        animation: fadeInDown 0.2s ease-in-out;
+    }
+    &-navbar-menu{
+        display: flex;
+        align-items: center;
+    }
+    &-navbar-logo{
+        height: 4.2rem;
+        width: 11.7rem;
+        outline: none;
+    }
+    &-navbar-list{
+        margin-left: 3rem;
+        display: flex;
+        align-items: center;
+    }
+    &-navbar-blog{
+        display:none;
+        position:absolute;
+        background-color: $primary-color;
+        top: 12.2%;
+        width: 17rem; 
+        padding:1.7rem 1rem;
+        z-index:9;
+        li{
+            display: block;
+            width: 100%;
+            padding: 8px 10px;
+            transform: translateX(0px);
+            transition: transform 0.2s ease;
+            &:hover{
+                transform: translateX(3px);
+            }
+        }
+    }
+    &-navbar-item{
+        margin-left: 16px;
+        margin-right: 16px;
+        &-blog{
+            font-size: 16px;
+            font-family: $primary-font;
+            color: #fff;
+            font-weight: 400;
+            display: block;
+        }
+    }
+    @include animation-mixin(dropdownMenu,11.2%, 12.2%);
+    &-navbar-link{
+        font-family: $primary-font;
+        font-size: 16px;
+        text-transform: capitalize;
+        color: $text-color;
+        font-weight: 400;
+        padding: 3rem 5px;
+        position: relative;
+        z-index: 99;
+        @include hoverHeader;
+    }
+    .header-blog {
+        height: 100%;
+        &:hover {
+            .header-navbar-blog{
+               animation: dropdownMenu 0.3s ease-in-out;
+               display:block !important;
+           }}
+           
+    }
+    @include animation-mixin(fixeDropMenu, 75px, 80px);
+    &-navbar-fixed .header-blog {
+        &:hover {
+            .header-navbar-blog{
+               animation: fixeDropMenu 0.3s ease-in-out;
+               display:block !important;
+               top: 80px;
+           }}
+           
+    }
+    &-navbar-contact{
+        display: flex;
+        align-items: center;
+        &-phone{
+            display:flex;
+            padding: 10px 0;
+            margin-right: 30px;
+            color: $primary-color;
+            font-family: $primary-font;
+            &:hover{
+                .header-navbar-contact-icon{
+                    transform: rotate(110deg);
+                    transition: transform 0.5s ease-in-out;
+                }
+            }
+        }
+        &-icon{
+            font-size: 16px;
+            transform: rotate(90deg);
+            transition: transform 0.5s ease-in-out;
+        }
+        &-number{
+            font-size: 16px;
+            font-weight: 300;
+            padding-left: 12px;
+        }
+    }
+    &-navbar-order-btn{
+        display:inline-block;
+        padding:17px 36px;
+        font-size: 16px;
+        font-weight: 400;
+        @include btnPrimary;
+        box-shadow: none;
+    }
+    @include minWidth(1023px){
+        &-navbar-list{
+            align-items: flex-end;
+            margin-left: 36px;
+        }
+        &-navbar-item:not(:first-child){
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        &-navbar-order-btn{
+            width: 170px;
+        }
+        &-slicknav{
+            display:none;
+        }
+    }
+    @include maxWidth(1025px){
+        &-navbar-blog{
+            top: 5.9%;
+        }
+    @include animation-mixin(dropdownMenu,4.9%, 5.9%);
+    }
+    @include maxWidth(769px){
+        &-navbar-list{
+            display:none;
+        }
+        &-navbar{
+            padding: 0 7rem;
+        }
+        &-slicknav{
+            position: absolute;
+            top: 75px;
+            width: 90%;
+            z-index: 9;
+            &-menu{
+                width: 628px;
+                background: #4c4c4c;
+                padding: 5px 5px;
+                z-index:99;
+                width: 90%;
+            }
+            &-btn{
+                display:block;
+                max-width: 92px;
+                position: relative;
+                margin: 5px 6px 5px;
+                padding: 8px 10px;
+                background: #222;
+                border-radius: 4px;
+                float:right;
+            }
+            &-text{
+                text-transform: uppercase;
+                color:#fff;
+                font-size: 16px;
+                font-weight: 600;
+            }
+            &-list-icon{
+                display: inline-block;
+                float:right;
+                width: 16px;
+                height: 8px;
+                margin: 1px 5px;
+            }
+            &-icon{
+                display:block;
+                background-color: #fff;
+                width: 17px;
+                height: 2px;
+                &:not(:first-child){
+                    margin-top: 3px;
+                }
+            }
+            &-list{
+                // display:none;
+                clear:both;
+                @include slideDownMenu(238px);
+                li a{
+                    display: block;
+                    width: 100%;
+                    margin: 2px 5px;
+                    padding: 7px 7px;
+                    color: #fff;
+                    text-transform: capitalize;
+                    font-size: 14px;
+                    font-weight: 300;
+                }
+            }
+            &-blog{
+                position: relative;
+                &-arrow{
+                    margin-left: 3px;
+                }
+            }
+            &-submenu{
+                margin-left:20px;
+                @include slideDownMenu(88px);
+            }
+        }
+    }
+    @include maxWidth(480px){
+        &-navbar{
+            padding: 0 2rem;
+            &-logo{
+                width:10rem;
+                height: 4rem;
+            }
+            &-contact-phone{
+                margin-right: 5px   ;
+            }
+            &-contact-number{
+                font-size: 12px;
+            }
+        }
+        &-navbar-order-btn{
+            padding: 12px 20px;
+            font-size: 10px;
+        }
+        &-slicknav-menu{
+            width: 100%;
+        }
+    }
+    @include maxWidth(321px){
+        &-navbar-contact{
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            margin-bottom: 5px;
+        }
+        &-navbar-order-btn{
+            padding: 8px 18px;
+            font-size: 12px;
+            text-align: center;
+        }
+        &-navbar-contact-number{
+            font-size: 12px;
+            align-self: center;
+        }
+        &-navbar-contact-icon{
+            font-size: 12px;
+        }
+    }
+}
+.hidden.load-container{
+    display: none;
+}
+.showed.load-container{
+    display: flex;
+}
+
+.load-container{
+    background-color: #f7f7f7;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999;
+    transition: .6s;
+    margin: 0 auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.loading-screen{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-circle {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-style: solid;
+    border-width: 1px;
+    border-top-color: #f04506;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    z-index: 10;
+    border-radius: 50%;
+    transition: .9s;
+    right: 0;
+    animation: spinner2 2000ms infinite ease;
+    box-shadow: 0 1px 5px 0 rgba(35 ,181, 185,0.15);
+    background-color: #fff;
+}
+.loading-image{
+    position: absolute;
+    top: 50%;
+    z-index: 200;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    transform: translateY(-50%);
+    padding-top: 6px;
+    transition: .9s;
+    justify-content:center;
+}
+
+    @keyframes spinner2 {
+    
+        0%{
+            transform:rotate(0deg);
+            transition:.9s}
+            
+        100%{
+            transform:rotate(360deg);
+            transition:.9s}
+    }
+
+
